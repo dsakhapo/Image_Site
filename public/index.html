@@ -14,9 +14,10 @@
         dataType: 'json',
         success: function(data, status, xhr){
           for(var i = 0; i < data.length; ++i){
-            document.getElementById('image-list').innerHTML +=
+            document.getElementById('image-list').innerHTML =
             "<div class=\"image\">" + "<li>" + "<a href=\"http://localhost:4000/image/" + data[i].name + "\" target=\"_self\">"
-            + "<img src=\""+ data[i].name + "\" />" + "</a>" + "<\/li>" + "</div>";
+            + "<img src=\""+ data[i].name + "\" />" + "</a>" + "<\/li>" + "</div>" +
+            document.getElementById('image-list').innerHTML;
           }
         },
         error: function(xhr, status, error){
