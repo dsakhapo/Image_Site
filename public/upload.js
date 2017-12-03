@@ -19,8 +19,10 @@ $('#image-search').change(function(){
       contentType: false,
       success: function(data, status, xhr){
         document.getElementById('upload-err').innerHTML = "";
-        document.getElementById('image-list').innerHTML +=
-          "<div class=\"image\">" + "<li>" + "<img src=\""+ data.name + "\" />" + "<\/li>" + "</div>";
+        document.getElementById('image-list').innerHTML =
+        "<div class=\"image\">" + "<li>" + "<a href=\"http://localhost:4000/image/" + data.name + "\" target=\"_self\">"
+        + "<img src=\""+ data.name + "\" />" + "</a>" + "<\/li>" + "</div>" +
+        document.getElementById('image-list').innerHTML;
       },
       error: function(xhr, status, error){
         document.getElementById('upload-err').innerHTML += JSON.parse(xhr.responseText).error;
